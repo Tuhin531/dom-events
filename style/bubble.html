@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Babul </title>
+</head>
+<body>
+    <h1>Exploring Event Bubble</h1>
+    <section id="list-container">
+        <ul id="item-ul">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Nulla, natus.</li>
+            <li id="item-3">Iure, dolorem!</li>
+            <li id="item-4">Voluptatem, fugit.</li>
+            <li id="item-5">A, consectetur.</li>
+            <li id="item-6">Nemo, saepe.</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('item-2').addEventListener('click', function(){
+            console.log('Item-2 clicked');
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('item-ul').addEventListener('click', function(){
+            console.log('Item-ul clicked')
+        })
+        document.getElementById('list-container').addEventListener('click', function(){
+            console.log('ul-container clicked')
+        })
+    </script>
+    
+</body>
+</html>
