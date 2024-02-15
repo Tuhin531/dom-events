@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <!-- <h1>This is my practice section.</h1>
+    <p id="input-text-display">Default input text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Submit</button> -->
+
+        <h1>Explore event Delegate</h1>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Quas, dignissimos iure.</li>
+            <li class="item">Inventore, ad facere!</li>
+            <li class="item">Tempore, error unde?</li>
+            <li class="item">Incidunt, sapiente inventore.</li>
+            <li class="item">Iusto, libero cupiditate.</li>
+        </ul>
+        <button id="btn-add-item">Add item</button>
+    </section>
+
+
+
+    <script>
+        /*  document.getElementById('btn-update').addEventListener('click', function () {
+ 
+             const inputField = document.getElementById('input-field');
+             const inputText = inputField.value;
+ 
+             const p = document.getElementById('input-text-display');
+             p.innerText = inputText;
+             inputField.value = '';
+         }) */
+
+        document.getElementById('list-container').addEventListener('click', function () {
+            // console.log(event.target);
+            event.target.parentNode.removeChild(event.target);
+        })
+
+
+
+        document.getElementById('btn-add-item').addEventListener('click', function(){
+            const listContainer = document.getElementById('list-container');
+             
+            const li = document.createElement('li');
+            li.innerText = 'Brand new products';
+            li.classList.add('item');
+            listContainer.appendChild(li);
+
+        })
+    </script>
+</body>
+
+</html>
